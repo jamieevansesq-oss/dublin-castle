@@ -48,8 +48,6 @@
     .curtain-right.open { transform: translateX(90%); }
     .curtain-fringe { position: absolute; top: 0; width: 100%; height: 20px; background: repeating-linear-gradient(90deg, #c8a030 0px, #c8a030 4px, #8b1a1a 4px, #8b1a1a 12px); }
 
-    .headliner-btn { margin-top: 12px; background: transparent; border: 2px solid #c8a030; border-radius: 2px; padding: 10px 20px; font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #c8a030; cursor: pointer; width: 100%; transition: all 0.15s; }
-    .headliner-btn:hover { background: #c8a030; color: #1a1a1a; }
 
     /* LINEUP */
     .lineup-area { padding: 20px 24px; }
@@ -88,16 +86,15 @@
   </div>
 
   <div class="stage-section">
-    <div class="stage-title">Tonight's Headliner</div>
+    <div class="stage-title">Touch the cloth to reveal today's headliner</div>
     <div class="stage-wrap" id="stage-wrap" onclick="revealHeadliner()">
       <div class="stage-lights"></div>
       <div class="stage-floor"></div>
       <div class="stage-name" id="stage-name"></div>
       <div class="curtain-left" id="curtain-left"><div class="curtain-fringe"></div></div>
       <div class="curtain-right" id="curtain-right"><div class="curtain-fringe"></div></div>
-      <div class="stage-prompt" id="stage-prompt">🎸 Press for tonight's headliner</div>
+      <div class="stage-prompt" id="stage-prompt">🎸 Touch the cloth...</div>
     </div>
-    <button class="headliner-btn" onclick="resetCurtain()">New headliner</button>
   </div>
 
   <div class="lineup-area" id="lineup-area"></div>
