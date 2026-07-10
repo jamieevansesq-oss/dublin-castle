@@ -19,26 +19,47 @@
     .count-banner { background: #c8a030; text-align: center; padding: 8px; font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #1a1a1a; }
     .add-section { border-bottom: 4px solid #1a1a1a; background: #1a1a1a; padding: 20px 24px; }
     .add-title { font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 3px; color: #c8a030; text-transform: uppercase; text-align: center; margin-bottom: 14px; }
-    .form-row { display: flex; gap: 10px; margin-bottom: 10px; }
-    .form-row input:first-child { width: 160px; flex-shrink: 0; }
-    .form-row input:last-child { flex: 1; }
-    input[type="text"] { background: #f5efe0; border: 2px solid #c8a030; border-radius: 2px; padding: 10px 12px; font-family: 'Special Elite', serif; font-size: 13px; color: #1a1a1a; outline: none; width: 100%; }
-    input[type="text"]:focus { border-color: #e0b53a; background: #fff; }
-    input[type="text"]::placeholder { color: #999; }
+    .add-form { display: flex; gap: 10px; margin-bottom: 10px; }
+    .add-form input { flex: 1; background: #f5efe0; border: 2px solid #c8a030; border-radius: 2px; padding: 10px 12px; font-family: 'Special Elite', serif; font-size: 13px; color: #1a1a1a; outline: none; width: 100%; }
+    .add-form input:focus { border-color: #e0b53a; background: #fff; }
+    .add-form input::placeholder { color: #999; }
     .add-btn { background: #c8a030; border: none; border-radius: 2px; padding: 12px 20px; font-family: 'Oswald', sans-serif; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: #1a1a1a; cursor: pointer; width: 100%; transition: background 0.15s; }
     .add-btn:hover { background: #e0b53a; }
     .add-btn:active { background: #a88020; }
     .add-btn:disabled { background: #888; cursor: not-allowed; }
     .msg { font-family: 'Oswald', sans-serif; font-size: 12px; text-align: center; padding: 6px 0; letter-spacing: 1px; min-height: 22px; color: #c8a030; }
+
+    /* HEADLINER STAGE */
+    .stage-section { background: #1a1a1a; padding: 20px 24px; border-bottom: 4px solid #c8a030; }
+    .stage-title { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 3px; color: #888; text-transform: uppercase; text-align: center; margin-bottom: 12px; }
+    .stage-wrap { position: relative; width: 100%; height: 180px; background: #0a0a0a; border: 3px solid #3a2a0a; border-radius: 2px; overflow: hidden; cursor: pointer; }
+    .stage-lights { position: absolute; top: 0; left: 0; right: 0; height: 18px; background: repeating-linear-gradient(90deg, #c8a030 0px, #c8a030 8px, transparent 8px, transparent 24px); opacity: 0.7; }
+    .stage-floor { position: absolute; bottom: 0; left: 0; right: 0; height: 30px; background: linear-gradient(to top, #2a1a00, transparent); }
+    .stage-name { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Abril Fatface', serif; font-size: 22px; color: #c8a030; text-align: center; text-transform: uppercase; letter-spacing: 2px; line-height: 1.3; width: 80%; text-shadow: 0 0 20px rgba(200,160,48,0.5); z-index: 1; opacity: 0; transition: opacity 0.5s ease 0.8s; }
+    .stage-name.revealed { opacity: 1; }
+    .stage-prompt { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Oswald', sans-serif; font-size: 13px; color: #888; letter-spacing: 2px; text-transform: uppercase; text-align: center; z-index: 5; transition: opacity 0.3s; }
+    .stage-prompt.hidden { opacity: 0; pointer-events: none; }
+
+    /* CURTAINS */
+    .curtain-left, .curtain-right { position: absolute; top: 0; bottom: 0; width: 52%; z-index: 10; transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
+    .curtain-left { left: 0; background: #8b1a1a; background-image: repeating-linear-gradient(180deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 3px, transparent 3px, transparent 20px), repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 8px, transparent 8px, transparent 40px); border-right: 4px solid #5a0a0a; }
+    .curtain-right { right: 0; background: #8b1a1a; background-image: repeating-linear-gradient(180deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 3px, transparent 3px, transparent 20px), repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 8px, transparent 8px, transparent 40px); border-left: 4px solid #5a0a0a; }
+    .curtain-left.open { transform: translateX(-90%); }
+    .curtain-right.open { transform: translateX(90%); }
+    .curtain-fringe { position: absolute; top: 0; width: 100%; height: 20px; background: repeating-linear-gradient(90deg, #c8a030 0px, #c8a030 4px, #8b1a1a 4px, #8b1a1a 12px); }
+
+    .headliner-btn { margin-top: 12px; background: transparent; border: 2px solid #c8a030; border-radius: 2px; padding: 10px 20px; font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #c8a030; cursor: pointer; width: 100%; transition: all 0.15s; }
+    .headliner-btn:hover { background: #c8a030; color: #1a1a1a; }
+
+    /* LINEUP */
     .lineup-area { padding: 20px 24px; }
     .lineup-grid { columns: 3; column-gap: 20px; }
-    @media (max-width: 600px) { .lineup-grid { columns: 1; } .header-title { font-size: 32px; } .form-row { flex-direction: column; } .form-row input:first-child { width: 100%; } }
+    @media (max-width: 600px) { .lineup-grid { columns: 1; } .header-title { font-size: 32px; } .add-form { flex-direction: column; } .stage-name { font-size: 16px; } }
     @media (min-width: 601px) and (max-width: 800px) { .lineup-grid { columns: 2; } }
     .band-entry { break-inside: avoid; padding: 4px 0; border-bottom: 1px dashed #b8a882; display: flex; align-items: flex-start; gap: 6px; margin-bottom: 4px; }
     .band-bullet { color: #c8a030; font-size: 10px; margin-top: 4px; flex-shrink: 0; }
     .band-name { font-family: 'Special Elite', serif; font-size: 12px; color: #1a1a1a; line-height: 1.4; }
     .new-entry { background: #fff8e1; border-left: 3px solid #c8a030; padding-left: 6px !important; }
-    .submitter { font-size: 10px; color: #888; display: block; }
     .section-divider { margin: 16px 0 8px; border-top: 2px solid #1a1a1a; padding-top: 10px; }
     .section-label { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #888; margin-bottom: 8px; }
     .advert-break { margin: 0 0 20px 0; text-align: center; background: #1a1a1a; padding: 10px 0; }
@@ -56,51 +77,138 @@
   </div>
   <div class="decorative-bar"></div>
   <div class="count-banner" id="count-banner">Loading the lineup...</div>
+
   <div class="add-section">
     <div class="add-title">Add Your Act To The Bill</div>
-    <div class="form-row">
-      <input type="text" id="name-input" placeholder="Your name (optional)" maxlength="30" />
+    <div class="add-form">
       <input type="text" id="band-input" placeholder="Band name..." maxlength="100" />
     </div>
     <div class="msg" id="msg"></div>
     <button class="add-btn" id="add-btn" onclick="addBand()">Book 'em in</button>
   </div>
+
+  <div class="stage-section">
+    <div class="stage-title">Tonight's Headliner</div>
+    <div class="stage-wrap" id="stage-wrap" onclick="revealHeadliner()">
+      <div class="stage-lights"></div>
+      <div class="stage-floor"></div>
+      <div class="stage-name" id="stage-name"></div>
+      <div class="curtain-left" id="curtain-left"><div class="curtain-fringe"></div></div>
+      <div class="curtain-right" id="curtain-right"><div class="curtain-fringe"></div></div>
+      <div class="stage-prompt" id="stage-prompt">🎸 Press for tonight's headliner</div>
+    </div>
+    <button class="headliner-btn" onclick="resetCurtain()">New headliner</button>
+  </div>
+
   <div class="lineup-area" id="lineup-area"></div>
   <div class="footer">All acts subject to sobriety &bull; No refunds &bull; Bring your own pork</div>
 </div>
+
 <script>
   const SUPABASE_URL = 'https://xhpixaywuljkuwumhccl.supabase.co'
   const SUPABASE_ANON_KEY = 'sb_publishable_QjnAKxn_wHETVhxQXYQ9kQ_GKmur7Pf'
   const { createClient } = supabase
   const db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
   const ADVERTS = ['meat.png','roebuck.png','lard.png','pbf.png','terry.png','hoover.png','blob.png','ginger.png','stiffys.png','giles.png'];
   const AD_INTERVAL = 40;
+
   const ORIGINAL = ["Tummy Yoghurt","Wrong sized cloggs","Travel cushion testes","Top Notch Geordie","The Perpendicular Chickens","Substitute Rolling Pin","The Outer Onion","Spastic Margerine","Oral Enema","Intertwining Bastards","Multiple mixed race mammals","Post-steak penetration","slightly worried about dad","Jack Millers Sex Offender Moustache","Involuntary Ronald","Utter Phillips based Garbage","Preemptive cash-money","Prince based deflection","The outside ledge of a jizzy window","Reamed by a cactus or cacti","Baggy Waggy Jizzy Jazzy Spines","Toilet paper bottle top","Wheel barrow of skin particles","Teary blue drinks","Strongly Worded Tweet aimed at Bupa","Stealthy tea bags","Fleshlight option","Veggie terminator","Critically Endangered Silverbacks with Penises for Hands","Spanish Tarmaccers","Parklife jesus","pre booking memories","mild case of swampass","Detritus of regional specialty cheeses","Lazy Susan and the slightly off piste garnish","flappy shit tits","2 Intelligent Italians","Lads On Bench Outside","Hot Tub Broth","Great Big Sleepy Cocktail","Multitasking at the urinal","Malaysian Garys","Pigeon Fatshamers","Buttercups are a lie","Bastard Bezos Machine","Decent Cafe Sausage and the double dippers","Carbon neutral dickhead","Cheese lager and anusol","Sanitised sex bubble","Questionable Moist Money","Offensively Beige","Kebaby nights","Virgils bonce","Big up the ampersand","Suspicious Liquids","Housmous at dusk","Mystery Charity Shop Stain","Sliced beefy jeux pronounced JEW","Petrol Sweats","Crackin Pelvis","Virago Stench","Betrayed by the Chicken","Perineum NFT","Hoisin regret","Seasonal Scrotum Settings","Cameltoe Dye-job","Defibrillate the perineum","Jizzy Kaleidoscope","Standard Diameter Jizz can","Pocket Jizzers","Soggy Pocket","Saudi Arabian Bowel Movements","Disinterested handjob","Jesus and The Reptiles","Ambassadors of the spaz","Inconsistent Teapot Situation","Gravy Excitement","Impervious to Putin","Short Term Rennies","Double Floor Limeage","Very Dehydrated Piss","Defective Womble","Pie on the ceiling","Chemo Porridge","Virgin Upperclass Pretzles","Romanian Automatic Fuckage","Stitched up by the toilet Bossman","Room full of crying Gammons","Shlong in the tooth","Bookcase pisser","Metabolic nonce","Stowford Frenzy","Jizzless Existence","Tramps on the Floor","Smug Druggling","Crotch Seeking Missile","Maternal Flathead","Gushy and the Dickheads","Involuntary slather","2s up on a 3 wheeler","Dusty Asian Kippers","Blasting Fingers knackered","Spazzy Shitended Ginger Prick","DJ Seepage","Elastic Sid-eye","No Emollients","Post Peculiar Blues","Plumbed in Lillys","Dogging and Cider Cubes","Optimum Flu-age","Jizzy Spudgun","Life sized womans arse","Rusty Beige Marriner","Wasp with a Cough","Jizzy Pints","Majestic Cringe Fest","Big up the Cysts","Frozen Egg Puck","Tash and The Kinky Apples","Defrosted infant mouse","Fat cunt scooters","Eyebrows Eyebrows","Windowsill full of beers","Spastic Hoover","Small nippled Samoans and their wrestling Dynasties","Blown half the shark off","Orange Peeling Injury","Pegging","Bathroom Dad","Worms and that","Eggy wets","Fathers for selling Avon for justice","A bit Haggy","Whisking Whisking Whisking","Hatzis for Nazis","Budgies to big to smuggle","Compressed fun","One bollock shower","Minimal wastage","Foaming arsehole","Empty Fanta bottle","Plutonic brews","Onesided suntan","Chewing on a fatty ride","Cunt in my corner","Cutlery in the pipe work","Radweld chaser","Recaro kemode","Heavily Muslim","Smelly bundle","Carried away at the butchers","Single bristle toothbrush","Bellend production factories","Duckquack startup","Wet bandit cat","Dirhim millionaire","Dithering cnuts","Titter while you shit","Involuntary snort","Free range brain","Sausage karaoke","Shazam dont lie","Harmonising the sausage","Lolly stasher","Sausage gambler","Solitary banana and the a wing onions","Haunted bucket","Three attempted wipes","Black Santa","Superior pepper","Pissy transit","Hammerite for the soul","Bollock it in sideways","Anal one man band","Cooking tray to the arse finish","Tickle her to get the high notes","Two pint plastic glasses","Back to the sausages","Stilton arson","Classic mallard","A month of penises","Asthmatics nightmare","Molotov pest control","Ball circumference","Drunken fusspot","Troubles in Sri Lanka","Alfresco blastoff","Perverse mutley","Spittin n shittin","Burton dodgers","The soaking tables of burton","Shunting cupboard","Pink rinse bandits","Brown bin terrorists","Fake umpires","Stalky bag","Moroccan ganja","Functional beer","Firewank display","Horse linement","Razor blades and bristles","Reformed sweetcorn","Dogshit research","Doll stick Puddle dodgers","Impressive porks","Crushed by a Quashqai","Silicon and Bin Liners","Smoke free clitoris","Ball trackers","Long slot toaster","Full english lasagne","Original kitchens","Jetstream shitting","Sausage blackmail","Horse dentist","Roebuck fraud","Testicular recognition","Ferns in urns","Autistic Meat Fruit Eaters","Ginger Spaniards","Spunkydust","Well Travelled Voucher","Dangly Noodle","Accent police","Poo tanglers","The actual bangers","Sweaty apron","Halal cats","2 Ex Paratroopers 1 homosexual","Bongy goggles","Off peak rioters","Bonus seat points","Two conditioners and a body wash","Keeping tabs on the biscoff","Carpet of scabies","Punjabi vaginas","Dreamy Jew","Face toucher","Fat eyelids","Tonking off in the mirror","Flat pack fans","Oppos purple headed pepper grinder","Barnsley raisins","Town centre violence","Cider shites","Pyramid of booze","Hotdog ring piece","Yoxxal king","Spastics games club","8-16-5","Spastic on the floor","Exploding seagulls","Welsh nudgers","Steak pie lethargy","Sturdy buzzom","Sexy pie footage","Text fresnels","Lettuce leaf atmosphere","Rampaging slugs","Reluctant nuts","Penetrating Johnny","Israelite Sausage","Stationary doop de doo","Paparazzi Brian","Two weeks in beef fat","Inbred turnip","Meat Angel for the sex camper","Undangerous Tim","Emergency chicken","Steak n taters Chase and Status tribute band","Foreskin flute","Beer growling","Knee deep in Jamaicans","Penisless Entity","Jumping Brussel sprouts","Square Malteser Fuck off table","Timmy two fingers","Three pints and a Camembert","Big lad canoes bath","Isotonic pork","Round head surgery","Trolley full of goujons","Several Layers of Glover","2 Ply Escapades","Optimistic double","Shear volume of brown liquid","Sam sells Avon","Soggy knuckles","Farticle inpregnation","Fluorescent Shins","Gas air and bovril","Rectal memory","Two day funeral","6kw of madness","Synchronised Crumbage","Flip flop nazi","Antilock foreskin","Scotch egg sweat shop","Fortnightly Handjob","Chilly Shocker Finish","Off-Piste Pissup","Tactical Cheese-Break","Penis Heavy Answers","One Hand Wafter","Bottom Smelling Bastards","Vegan dripping","Fishy creamy garlic","Sober yodelling","Sticky Wrists","Retard in a Cornfield","Functional browns and the brown pendulum","Derailed by Mancunians","Garnaian geordies","Calves and Torso","Inconsistent Jelly Distribution","Post-School stinky kid soup","Noticeably wet spine","Knocked up Skank","Double Tabbing","Serious Pork Misplacement","They once were pints","Edible dogshit","Uppercase Trumpet Valves","Ashy Elbows McGee","Ring o Grease","Spare Raffle Beef","Foreskin donation","Passport free Tommy","Spunky Passport","Grumble Compendium","Spoffing Dust","Conveyor belt of Spaffs","Horny Jewish Bagels","Plant Based Wallah","Egg Free Omelet","Substantial Pocketry","Italian Fighting Trousers","Sweaty Disco Minge","Expected tethering time","Double hedgehog disguise","Cheese credit","The Ikea Tactical Chunder","Extra Pocketage","Buttery toast and the Chinese","Incestuous Inches","Rubber stuffing","Drugs mittens","Left handed Chinese bastards","The Elusive Prawn","Dough Roy Me","Vinegar roommates","Deceiving Grapes","Snakes of children","Classic lathe distraction","Classic stodge material","not enough piss","Seriously Inclusive Turtles","2 lumps in a bowl of custard","Beetroot carpet","Cant bleach sweetcorn","Faceful of sweaty groin","Right hand suntan","Sentimental rose","Long Norman","Giant retards","Meat laces","Reasonably Spanish","Imaginary knee injury","Lennie cant hear Spanish","Bin based massage","Pork conch","Holding Gravy","Robust norkage","Jizzy etch a sketch","Bummers wigwam","Black mans oriental ambition","Love Luna libations","Chinese rhubarb rabi","Interchangeable arse cheek","Screaming at Iranians","Forced prostate ejaculate","Teaming with columbians","Colombian turbans","Two bottle pocket"];
+
+  let allBands = [];
+  let curtainOpen = false;
+
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
   function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-  function advert(index) { const img = ADVERTS[index % ADVERTS.length]; return '<div class="advert-break"><div class="advert-label">A message from our sponsors</div><img src="' + img + '" alt="advert" /></div>'; }
+
+  function advert(index) {
+    const img = ADVERTS[index % ADVERTS.length];
+    return '<div class="advert-break"><div class="advert-label">A message from our sponsors</div><img src="' + img + '" alt="advert" /></div>';
+  }
+
+  function revealHeadliner() {
+    if (curtainOpen) return;
+    curtainOpen = true;
+    const pool = allBands.length > 0 ? allBands : ORIGINAL;
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    document.getElementById('stage-name').textContent = pick;
+    document.getElementById('stage-prompt').classList.add('hidden');
+    document.getElementById('curtain-left').classList.add('open');
+    document.getElementById('curtain-right').classList.add('open');
+    setTimeout(() => { document.getElementById('stage-name').classList.add('revealed'); }, 800);
+  }
+
+  function resetCurtain() {
+    curtainOpen = false;
+    document.getElementById('curtain-left').classList.remove('open');
+    document.getElementById('curtain-right').classList.remove('open');
+    document.getElementById('stage-name').classList.remove('revealed');
+    document.getElementById('stage-name').textContent = '';
+    setTimeout(() => { document.getElementById('stage-prompt').classList.remove('hidden'); }, 600);
+  }
+
   function renderLineup(additions) {
     const area = document.getElementById('lineup-area');
     const banner = document.getElementById('count-banner');
     const total = ORIGINAL.length + (additions ? additions.length : 0);
-    banner.textContent = total + ' acts confirmed and counting';
+    banner.textContent = total + ' acts confirmed — and counting';
+
+    allBands = [...ORIGINAL, ...(additions || []).map(r => r.band_name)];
+
+    const shuffled = shuffle(ORIGINAL);
     let html = '', advertIndex = 0, chunk = [];
-    function flushChunk() { if (!chunk.length) return; html += '<div class="lineup-grid">'; chunk.forEach(b => { html += '<div class="band-entry"><span class="band-bullet">&#9658;</span><span class="band-name">' + esc(b) + '</span></div>'; }); html += '</div>'; chunk = []; }
-    ORIGINAL.forEach((b, i) => { if (i > 0 && i % AD_INTERVAL === 0) { flushChunk(); html += advert(advertIndex++); } chunk.push(b); });
+
+    function flushChunk() {
+      if (!chunk.length) return;
+      html += '<div class="lineup-grid">';
+      chunk.forEach(b => { html += '<div class="band-entry"><span class="band-bullet">&#9658;</span><span class="band-name">' + esc(b) + '</span></div>'; });
+      html += '</div>';
+      chunk = [];
+    }
+
+    shuffled.forEach((b, i) => {
+      if (i > 0 && i % AD_INTERVAL === 0) { flushChunk(); html += advert(advertIndex++); }
+      chunk.push(b);
+    });
     flushChunk();
-    if (additions && additions.length > 0) { html += '<div class="section-divider"><div class="section-label">Fresh off the pub table</div><div class="lineup-grid">'; additions.forEach(row => { const sub = row.submitted_by ? '<span class="submitter">- ' + esc(row.submitted_by) + '</span>' : ''; html += '<div class="band-entry new-entry"><span class="band-bullet">&#9733;</span><span class="band-name">' + esc(row.band_name) + sub + '</span></div>'; }); html += '</div></div>'; }
+
+    if (additions && additions.length > 0) {
+      html += '<div class="section-divider"><div class="section-label">Fresh off the pub table</div><div class="lineup-grid">';
+      additions.forEach(row => {
+        html += '<div class="band-entry new-entry"><span class="band-bullet">&#9733;</span><span class="band-name">' + esc(row.band_name) + '</span></div>';
+      });
+      html += '</div></div>';
+    }
     area.innerHTML = html;
   }
-  async function loadAdditions() { const { data, error } = await db.from('bands').select('band_name, submitted_by, created_at').order('created_at', { ascending: true }); if (error) { console.error(error); renderLineup([]); return; } renderLineup(data); }
+
+  async function loadAdditions() {
+    const { data, error } = await db.from('bands').select('band_name, created_at').order('created_at', { ascending: true });
+    if (error) { console.error(error); renderLineup([]); return; }
+    renderLineup(data);
+  }
+
   async function addBand() {
-    const nameInput = document.getElementById('name-input'), bandInput = document.getElementById('band-input'), msg = document.getElementById('msg'), btn = document.getElementById('add-btn');
-    const band = bandInput.value.trim(), name = nameInput.value.trim();
+    const bandInput = document.getElementById('band-input');
+    const msg = document.getElementById('msg');
+    const btn = document.getElementById('add-btn');
+    const band = bandInput.value.trim();
     if (!band) { msg.style.color = '#e05030'; msg.textContent = "You've got to give us something to work with..."; return; }
     btn.disabled = true; btn.textContent = 'Booking...';
-    const { error } = await db.from('bands').insert([{ band_name: band, submitted_by: name || null }]);
+    const { error } = await db.from('bands').insert([{ band_name: band }]);
     if (error) { msg.style.color = '#e05030'; msg.textContent = 'Something went wrong - try again!'; console.error(error); }
-    else { bandInput.value = ''; nameInput.value = ''; msg.style.color = '#c8a030'; msg.textContent = name ? 'Cheers ' + name + ' - they are on the bill!' : "They're on the bill!"; await loadAdditions(); setTimeout(() => { msg.textContent = ''; }, 3000); }
+    else { bandInput.value = ''; msg.style.color = '#c8a030'; msg.textContent = "They're on the bill!"; await loadAdditions(); setTimeout(() => { msg.textContent = ''; }, 3000); }
     btn.disabled = false; btn.textContent = "Book 'em in";
   }
+
   document.getElementById('band-input').addEventListener('keydown', e => { if (e.key === 'Enter') addBand(); });
   loadAdditions();
 </script>
